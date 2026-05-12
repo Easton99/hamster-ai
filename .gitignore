@@ -1,0 +1,38 @@
+# ── User data ────────────────────────────────────────────────────────────────
+# Never commit personal settings, memories, or logs
+data/config/settings.json
+data/*.db
+data/logs/*.log
+crash.log
+
+# Keep directory structure (the .gitkeep files are committed)
+!data/logs/.gitkeep
+!plugins/.gitkeep
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# ── Build & distribution ─────────────────────────────────────────────────────
+dist/
+build/
+*.egg-info/
+
+# ── Virtual environment ───────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+Env/
+
+# ── IDE / editor ─────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ── OS ───────────────────────────────────────────────────────────────────────
+Thumbs.db
+Desktop.ini
+.DS_Store

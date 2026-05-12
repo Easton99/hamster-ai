@@ -1,0 +1,9 @@
+{
+  "name": "scheduled_reminders",
+  "description": "Set time-based reminders that fire as desktop notifications.",
+  "enabled_by_default": true,
+  "settings": [
+    {"key": "queue_during_protected_modes", "label": "Queue reminders during protected modes", "type": "toggle", "default": true},
+    {"key": "speak_reminders", "label": "Speak reminders aloud (requires Voice Output)", "type": "toggle", "default": false}
+  ]
+}

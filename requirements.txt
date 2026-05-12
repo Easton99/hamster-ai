@@ -1,0 +1,26 @@
+# Core UI
+PySide6>=6.6.0
+
+# System monitoring
+psutil>=5.9.0
+
+# Windows integration (active window detection, startup programs, USB)
+# pywin32>=306
+
+# GPU stats (install the one that matches your GPU)
+# GPUtil>=1.4.0          # NVIDIA
+# pyamdgpuinfo>=0.1.0    # AMD
+
+# Hardware info (USB devices via WMI)
+# wmi>=1.5.1
+
+# Audio plugins (all optional)
+# pyttsx3>=2.90          # voice_output: Windows SAPI TTS
+# PyAudioWPatch>=0.2.12  # discord_translation: WASAPI loopback capture
+# faster-whisper>=1.0.0  # discord_translation: local Whisper transcription
+# webrtcvad>=2.0.10      # discord_translation: voice activity detection
+# numpy>=1.24.0          # required by faster-whisper
+# pycaw>=20230407        # audio_awareness: Windows audio session metering
+
+# Packaging
+# pyinstaller>=6.0.0

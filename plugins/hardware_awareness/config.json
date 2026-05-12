@@ -1,0 +1,12 @@
+{
+  "name": "hardware_awareness",
+  "description": "Connected monitors, USB devices, battery status, and internet connectivity.",
+  "enabled_by_default": false,
+  "settings": [
+    {"key": "battery_warn_below",      "label": "Warn battery below (%)", "type": "number", "default": 20},
+    {"key": "battery_warn_critical",   "label": "Critical battery below (%)", "type": "number", "default": 10},
+    {"key": "usb_event_notifications", "label": "USB connect/disconnect alerts", "type": "toggle", "default": true},
+    {"key": "internet_check_enabled",  "label": "Internet connectivity check", "type": "toggle", "default": true},
+    {"key": "include_in_llm_context",  "label": "Include in LLM context", "type": "toggle", "default": true}
+  ]
+}

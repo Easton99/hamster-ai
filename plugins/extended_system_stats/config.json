@@ -1,0 +1,14 @@
+{
+  "name": "extended_system_stats",
+  "description": "GPU, per-process CPU/RAM, disk usage, and network bandwidth.",
+  "enabled_by_default": false,
+  "settings": [
+    {"key": "poll_interval_seconds", "label": "Poll interval", "type": "number", "default": 30},
+    {"key": "top_processes_count",   "label": "Top processes to track", "type": "number", "default": 5},
+    {"key": "warn_cpu_above",        "label": "Warn CPU above (%)", "type": "number", "default": 90},
+    {"key": "warn_ram_above",        "label": "Warn RAM above (%)", "type": "number", "default": 90},
+    {"key": "warn_disk_above",       "label": "Warn disk above (%)", "type": "number", "default": 90},
+    {"key": "warn_gpu_temp_above",   "label": "Warn GPU temp above (°C)", "type": "number", "default": 85},
+    {"key": "include_in_llm_context","label": "Include in LLM context", "type": "toggle", "default": true}
+  ]
+}

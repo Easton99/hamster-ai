@@ -1,0 +1,9 @@
+{
+  "name": "process_awareness",
+  "description": "Running processes, internet-using apps, and Windows startup programs.",
+  "enabled_by_default": false,
+  "settings": [
+    {"key": "show_remote_addresses",  "label": "Show remote addresses", "type": "toggle", "default": false},
+    {"key": "include_in_llm_context", "label": "Include in LLM context", "type": "toggle", "default": false}
+  ]
+}
