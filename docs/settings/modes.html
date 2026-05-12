@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mode Settings — Hamster AI</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div id="sidebar"></div>
+<div class="page-wrap">
+  <header class="topbar">
+    <button class="hamburger" id="nav-toggle">☰</button>
+    <span class="topbar-breadcrumb"><a href="./">Settings</a> / Mode Settings</span>
+  </header>
+  <main class="content">
+
+    <div class="page-header">
+      <h1>Mode Settings</h1>
+      <p class="lead">Configure what triggers each mode and how they behave.</p>
+    </div>
+
+    <div class="callout info">
+      <strong>Note</strong> See <a href="../functionality/modes">Functionality → Modes</a> for a full explanation of how each mode works.
+    </div>
+
+    <h2>Work Mode</h2>
+    <table>
+      <thead><tr><th>Setting</th><th>Default</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Protected apps</td><td>Omnissa Horizon Client</td><td>Comma-separated list of process names or window title keywords that trigger Work Mode. E.g. <code>horizon, teams, slack</code></td></tr>
+        <tr><td>Auto-detect Work Mode</td><td>On</td><td>Automatically activate Work Mode when a protected app is detected.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Private Mode</h2>
+    <table>
+      <thead><tr><th>Setting</th><th>Default</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Auto-trigger keywords</td><td>(empty)</td><td>Window title keywords that automatically activate Private Mode. Useful for browsers with private browsing tabs.</td></tr>
+        <tr><td>Protected apps list</td><td>(empty)</td><td>App names that always trigger Private Mode.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Focus Mode</h2>
+    <table>
+      <thead><tr><th>Setting</th><th>Default</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Allow plugins during Focus Mode</td><td>Off</td><td>If on, plugins continue running (but notifications are still suppressed).</td></tr>
+        <tr><td>Allow voice during Focus Mode</td><td>Off</td><td>If on, Voice Output plugin can still speak during Focus Mode.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Game Safe Mode</h2>
+    <table>
+      <thead><tr><th>Setting</th><th>Default</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Auto-detect games</td><td>On</td><td>Automatically activate Game Safe Mode when known anti-cheat or game processes are detected.</td></tr>
+        <tr><td>Additional game processes</td><td>(empty)</td><td>Extra process names to watch for. Add any game that isn't auto-detected.</td></tr>
+      </tbody>
+    </table>
+
+  </main>
+  <footer class="site-footer"></footer>
+</div>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

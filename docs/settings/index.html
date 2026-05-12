@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Settings — Hamster AI</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div id="sidebar"></div>
+<div class="page-wrap">
+  <header class="topbar">
+    <button class="hamburger" id="nav-toggle">☰</button>
+    <span class="topbar-breadcrumb">Settings</span>
+  </header>
+  <main class="content">
+
+    <div class="page-header">
+      <h1>Settings</h1>
+      <p class="lead">Open Settings by right-clicking the tray icon and selecting <strong>Settings</strong>.</p>
+    </div>
+
+    <p>Settings are organised into tabs. Changes take effect immediately — no restart required unless noted.</p>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="icon">⚙️</div>
+        <h3><a href="general">General</a></h3>
+        <p>Model selection, Ollama URL, hotkey, startup behaviour, and chat timestamps.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🎨</div>
+        <h3><a href="appearance">Appearance</a></h3>
+        <p>Theme (Light / Dark / High Contrast) and mini widget position.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🛡️</div>
+        <h3><a href="modes">Mode Settings</a></h3>
+        <p>Configure protected apps, private mode triggers, and focus mode behaviour.</p>
+      </div>
+    </div>
+
+    <h2>Settings Storage</h2>
+    <p>All settings are stored in the local SQLite database at <code>data/hamster_ai.db</code>. They persist across restarts and are never synced to the cloud.</p>
+
+    <h2>Plugins</h2>
+    <p>Plugin enable/disable is managed separately via <strong>right-click tray → Plugins</strong>, not from the Settings window.</p>
+
+    <h2>Personality</h2>
+    <p>Personality profiles are stored in <code>config/personality_profiles.json</code> and can be edited from the <strong>Settings → Personality</strong> tab. Changes take effect on the next message.</p>
+
+  </main>
+  <footer class="site-footer"></footer>
+</div>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

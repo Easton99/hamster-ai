@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ — Hamster AI</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div id="sidebar"></div>
+<div class="page-wrap">
+  <header class="topbar">
+    <button class="hamburger" id="nav-toggle">☰</button>
+    <span class="topbar-breadcrumb">FAQ</span>
+  </header>
+  <main class="content">
+
+    <div class="page-header">
+      <h1>FAQ</h1>
+      <p class="lead">Common questions about Hamster AI.</p>
+    </div>
+
+    <h3>Does Hamster AI require an internet connection?</h3>
+    <p>No. All core features run fully offline. Ollama runs the LLM locally on your hardware. The only optional internet-dependent features (e.g. web search) are disabled by default and don't exist in the current version.</p>
+
+    <h3>What hardware do I need?</h3>
+    <p>Hamster AI itself is very lightweight. The bottleneck is the Ollama model you choose. A 3B parameter model runs comfortably on 8GB RAM. Larger models (7B, 13B) are faster and smarter on 16GB+ RAM with a discrete GPU.</p>
+
+    <h3>Will it get me banned from games?</h3>
+    <p>No. Hamster AI is designed specifically to be anti-cheat safe. It does not inject into game processes, hook graphics APIs, read game memory, or automate input. When it detects a game or anti-cheat process, it enters Game Safe Mode and becomes nothing more than a background tray app.</p>
+
+    <h3>Can I use it with a remote Ollama instance?</h3>
+    <p>Yes. Change the Ollama URL in Settings → General to point to another machine on your network, e.g. <code>http://192.168.1.100:11434</code>.</p>
+
+    <h3>What Ollama models work?</h3>
+    <p>Any model available through Ollama works. Recommended starting points:</p>
+    <ul>
+      <li><code>llama3.2:3b</code> — fast, low RAM usage, good for most tasks</li>
+      <li><code>llama3.1:8b</code> — better quality, needs more RAM</li>
+      <li><code>mistral:7b</code> — good all-rounder</li>
+      <li><code>phi3:mini</code> — very fast, minimal RAM</li>
+    </ul>
+
+    <h3>Will Hamster AI work with my work VPN or corporate network?</h3>
+    <p>Yes — it only communicates with <code>localhost</code> (Ollama). It doesn't make external network requests. Work Mode ensures it stays completely silent when your corporate environment is detected.</p>
+
+    <h3>Can Hamster AI see my screen?</h3>
+    <p>No. It reads the active window title and process name (e.g. "VS Code" or "Chrome") but never captures the screen, reads on-screen text, or performs OCR. It will never say "I can see your screen."</p>
+
+    <h3>How do I change the AI personality?</h3>
+    <p>Go to Settings → Personality. You can edit the default Hamster profile or create new ones. Profiles are stored in <code>config/personality_profiles.json</code>.</p>
+
+    <h3>Why isn't my plugin loading?</h3>
+    <p>The most common reason is a missing optional dependency. Open Diagnostics → the error message will name the missing package. Install it with <code>pip install &lt;package&gt;</code> and restart the app.</p>
+
+    <h3>How do I completely remove Hamster AI?</h3>
+    <ol>
+      <li>Right-click tray → Exit to close the app</li>
+      <li>Run the installer and choose <strong>Remove</strong>, or manually:
+        <ul>
+          <li>Delete the project folder</li>
+          <li>Delete <code>data/hamster_ai.db</code> if you want to wipe your data</li>
+          <li>Remove the startup registry entry: <code>HKCU\Software\Microsoft\Windows\CurrentVersion\Run\HamsterAI</code></li>
+          <li>Delete the Desktop shortcut if you created one</li>
+        </ul>
+      </li>
+    </ol>
+
+    <h3>Is Hamster AI free?</h3>
+    <p>Yes. It's open source under GNU GPL v3. Free to use, free to modify, free to redistribute (with attribution, under the same licence).</p>
+
+    <h3>Where do I report bugs or request features?</h3>
+    <p><a href="https://github.com/Easton99/hamster-ai/issues" target="_blank">Open an issue on GitHub</a>. Or use <code>/add-feature</code> in chat to log it locally to your own feature backlog.</p>
+
+  </main>
+  <footer class="site-footer"></footer>
+</div>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

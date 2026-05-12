@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Self-Fix — Hamster AI</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div id="sidebar"></div>
+<div class="page-wrap">
+  <header class="topbar">
+    <button class="hamburger" id="nav-toggle">☰</button>
+    <span class="topbar-breadcrumb"><a href="./">Diagnostics</a> / Self-Fix</span>
+  </header>
+  <main class="content">
+
+    <div class="page-header">
+      <h1>Self-Fix</h1>
+      <p class="lead">Hamster AI can suggest and apply fixes for common problems — but always asks first.</p>
+    </div>
+
+    <div class="callout info">
+      <strong>Key principle</strong> Hamster AI will never apply a fix without your explicit confirmation. It suggests, you decide.
+    </div>
+
+    <h2>How It Works</h2>
+    <p>When a health check fails or an error is logged, Hamster AI analyses the problem and may offer a fix suggestion in the Diagnostics window or in chat (via <code>/fix</code>). Each suggestion shows:</p>
+    <ul>
+      <li>What the problem is</li>
+      <li>What the fix will do</li>
+      <li>A confirmation button before anything happens</li>
+    </ul>
+
+    <h2>Safe Fixes (Applied After Approval)</h2>
+    <table>
+      <thead><tr><th>Fix</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td>Restart internal services</td><td>Restarts the plugin manager or event bus without a full app restart</td></tr>
+        <tr><td>Retry failed operation</td><td>Re-attempts the last failed action (e.g. Ollama connection)</td></tr>
+        <tr><td>Disable broken plugin</td><td>Turns off a plugin that failed to load or crashed</td></tr>
+        <tr><td>Recreate missing folders</td><td>Creates <code>data/</code>, <code>data/logs/</code>, or <code>config/</code> if they were deleted</td></tr>
+        <tr><td>Repair missing config</td><td>Restores a config file to its default values</td></tr>
+        <tr><td>Start Ollama</td><td>Attempts to launch <code>ollama serve</code> as a background process</td></tr>
+        <tr><td>Pull missing model</td><td>Runs <code>ollama pull &lt;model&gt;</code> for the selected model</td></tr>
+        <tr><td>Clear temporary files</td><td>Deletes cached or temp files that may be causing issues</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Fixes That Require Extra Confirmation</h2>
+    <p>The following actions require an additional explicit confirmation step because they affect user data or system settings:</p>
+    <ul>
+      <li>Deleting user memories or the database</li>
+      <li>Editing the Windows registry (e.g. startup entry)</li>
+      <li>Installing system packages</li>
+      <li>Changing Windows startup settings</li>
+    </ul>
+    <div class="callout warn">
+      <strong>These are never applied automatically</strong> — even if Hamster AI believes it's the right fix.
+    </div>
+
+    <h2>Running Self-Fix from Chat</h2>
+    <pre><code>/fix</code></pre>
+    <p>Shows the current list of available fix suggestions based on recent errors and health check results. Each suggestion can be applied or dismissed from the chat.</p>
+
+  </main>
+  <footer class="site-footer"></footer>
+</div>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

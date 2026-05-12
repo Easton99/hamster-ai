@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Functionality — Hamster AI</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div id="sidebar"></div>
+<div class="page-wrap">
+  <header class="topbar">
+    <button class="hamburger" id="nav-toggle">☰</button>
+    <span class="topbar-breadcrumb">Functionality</span>
+  </header>
+  <main class="content">
+
+    <div class="page-header">
+      <h1>Functionality</h1>
+      <p class="lead">Everything Hamster AI can do out of the box.</p>
+    </div>
+
+    <h2>Core Chat</h2>
+    <p>Hamster AI connects to a locally running Ollama model and gives you a full chat interface. Open it with <code>Ctrl+Shift+H</code> or from the system tray. The personality is brief, casual, and honest — it'll push back if you're wrong and admit when it's guessing.</p>
+    <div class="callout tip">
+      <strong>Model switching</strong> You can change the active Ollama model any time from Settings → General without restarting the app.
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="icon">🧠</div>
+        <h3><a href="memory">Memory &amp; Notes</a></h3>
+        <p>Persistent facts, to-dos, notes, and a future feature backlog — all stored locally in SQLite.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🛡️</div>
+        <h3><a href="modes">Modes</a></h3>
+        <p>Work, Focus, Private, and Game Safe modes that suppress tracking and notifications automatically.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">⌨️</div>
+        <h3><a href="commands">Commands</a></h3>
+        <p>Slash commands for memory, reminders, modes, diagnostics, and more.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🪟</div>
+        <h3><a href="mini-widget">Mini Widget</a></h3>
+        <p>A floating input bar and response popup so you never have to open the full chat window.</p>
+      </div>
+    </div>
+
+    <h2>System Context</h2>
+    <p>Hamster AI reads lightweight PC context to make smarter suggestions — without ever capturing your screen or keylogging.</p>
+    <table>
+      <thead><tr><th>What it reads</th><th>What it never touches</th></tr></thead>
+      <tbody>
+        <tr><td>Active app / window title</td><td>Screenshots or screen recording</td></tr>
+        <tr><td>CPU and RAM usage</td><td>Webcam or microphone (without your permission)</td></tr>
+        <tr><td>Idle time</td><td>Keyboard or mouse input</td></tr>
+        <tr><td>Fullscreen status</td><td>Game memory or files</td></tr>
+        <tr><td>Whether audio is playing (if plugin enabled)</td><td>Work or private session content</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Greeting System</h2>
+    <p>Hamster AI greets you on startup (if enabled) and occasionally afterwards — at most once every 2–4 hours. Greetings are suppressed during all protected modes. No greeting will play over a call or a game.</p>
+    <p>Example greetings:</p>
+    <ul>
+      <li>"Hamster online."</li>
+      <li>"Morning. Need anything?"</li>
+      <li>"Still grinding?"</li>
+      <li>"I'm up. Try not to break anything."</li>
+    </ul>
+
+    <h2>Personality System</h2>
+    <p>The personality is configured in <code>config/personality_profiles.json</code>. The default profile is <strong>Hamster</strong> — brief, casual, lightly cheeky, and honest. You can edit it or add custom profiles from the Settings window.</p>
+    <div class="callout info">
+      <strong>Note</strong> The personality never overrides Work Mode, Private Mode, Focus Mode, Game Safe Mode, honesty rules, or your settings.
+    </div>
+
+    <h2>Anti-Cheat Safety</h2>
+    <p>Hamster AI is designed to be invisible to anti-cheat systems. It does not inject into game processes, hook graphics APIs, read game memory, create in-game overlays, or automate input. When Game Safe Mode activates, all plugins pause and the app exists only as a background tray process.</p>
+
+  </main>
+  <footer class="site-footer"></footer>
+</div>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

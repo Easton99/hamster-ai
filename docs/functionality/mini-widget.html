@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mini Widget — Hamster AI</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div id="sidebar"></div>
+<div class="page-wrap">
+  <header class="topbar">
+    <button class="hamburger" id="nav-toggle">☰</button>
+    <span class="topbar-breadcrumb"><a href="./">Functionality</a> / Mini Widget</span>
+  </header>
+  <main class="content">
+
+    <div class="page-header">
+      <h1>Mini Widget</h1>
+      <p class="lead">Ask quick questions and get responses without ever opening the full chat window.</p>
+    </div>
+
+    <h2>What It Is</h2>
+    <p>The Mini Widget is a small always-on-top input bar that sits in a corner of your screen. It's designed for quick interactions — type a question, get a short reply, and get back to work. It stays out of the way until you need it.</p>
+
+    <h2>Opening the Widget</h2>
+    <p>Enable the mini widget from the tray menu: <strong>right-click tray → Show Mini Widget</strong>. It appears in the corner of your screen configured in Settings → Appearance.</p>
+    <div class="callout tip">
+      <strong>Tip</strong> The global hotkey (<code>Ctrl+Shift+H</code> by default) opens the full chat window. You can also configure a separate hotkey for the mini widget if you prefer.
+    </div>
+
+    <h2>Mini Response Popups</h2>
+    <p>When you send a message from the mini widget, the reply appears as a small floating popup above it — no need to open a full window. The popup has a <strong>10-second countdown</strong> before it closes automatically.</p>
+    <p>If you miss a response (e.g. the popup closes before you read it), it's saved and waiting for you in the mini history.</p>
+
+    <h2>Mini History</h2>
+    <p>Click the history button on the mini widget to open the <strong>Mini History</strong> window, which shows your last 50 mini widget responses. This lets you review anything you missed without opening the full chat.</p>
+
+    <h2>Positioning</h2>
+    <p>The mini widget anchors to a corner of your screen. You can choose the corner and fine-tune the offset in <strong>Settings → Appearance → Mini Widget</strong>:</p>
+    <table>
+      <thead><tr><th>Option</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Corner</td><td>Bottom-right, bottom-left, top-right, or top-left</td></tr>
+        <tr><td>Horizontal offset</td><td>Distance from the screen edge (pixels)</td></tr>
+        <tr><td>Vertical offset</td><td>Distance from the screen edge (pixels)</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Game Safe Mode</h2>
+    <p>The mini widget is automatically hidden when <strong>Game Safe Mode</strong> is active to avoid triggering anti-cheat detection. It reappears when the game process exits.</p>
+
+  </main>
+  <footer class="site-footer"></footer>
+</div>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

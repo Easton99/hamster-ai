@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Logs — Hamster AI</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div id="sidebar"></div>
+<div class="page-wrap">
+  <header class="topbar">
+    <button class="hamburger" id="nav-toggle">☰</button>
+    <span class="topbar-breadcrumb"><a href="./">Diagnostics</a> / Logs</span>
+  </header>
+  <main class="content">
+
+    <div class="page-header">
+      <h1>Logs</h1>
+      <p class="lead">Hamster AI logs everything locally. No logs are ever sent externally.</p>
+    </div>
+
+    <h2>Log Location</h2>
+    <p>Logs are written to:</p>
+    <pre><code>data/logs/hamster_ai.log</code></pre>
+    <p>The log file rotates automatically to prevent it growing too large. Old rotated files are kept as <code>hamster_ai.log.1</code>, <code>hamster_ai.log.2</code>, etc.</p>
+
+    <h2>Log Levels</h2>
+    <table>
+      <thead><tr><th>Level</th><th>When it appears</th></tr></thead>
+      <tbody>
+        <tr><td><strong>DEBUG</strong></td><td>Detailed internal events — only useful when tracking down a specific bug</td></tr>
+        <tr><td><strong>INFO</strong></td><td>Normal operational events — startup, mode changes, plugin load</td></tr>
+        <tr><td><strong>WARNING</strong></td><td>Something unexpected happened but the app recovered</td></tr>
+        <tr><td><strong>ERROR</strong></td><td>Something failed — usually actionable</td></tr>
+        <tr><td><strong>CRITICAL</strong></td><td>A severe failure that may prevent the app from functioning</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Viewing Logs</h2>
+    <p>Three ways to view logs:</p>
+    <ul>
+      <li><strong>In chat:</strong> <code>/logs</code> (recent entries) or <code>/errors</code> (errors only)</li>
+      <li><strong>Diagnostics window:</strong> right-click tray → Diagnostics</li>
+      <li><strong>Directly:</strong> open <code>data/logs/hamster_ai.log</code> in any text editor</li>
+    </ul>
+
+    <h2>Privacy in Logs</h2>
+    <p>Sensitive data is never written to logs:</p>
+    <ul>
+      <li>Work Mode window titles are not logged</li>
+      <li>Private Mode activity is not logged</li>
+      <li>Chat message content is not logged (only event metadata)</li>
+      <li>Memory content is not logged</li>
+    </ul>
+
+    <h2>Clearing Logs</h2>
+    <p>Clear the log file from the Diagnostics window, or with:</p>
+    <pre><code>/clear-logs</code></pre>
+    <div class="callout warn">
+      <strong>Note</strong> Clearing logs is permanent. If you're reporting a bug, export the diagnostic bundle first from the Diagnostics window.
+    </div>
+
+    <h2>Log Format</h2>
+    <pre><code>2026-05-12 14:32:01 INFO  [core.startup] Hamster AI started (model: llama3.2:3b)
+2026-05-12 14:32:02 INFO  [plugins] Loaded: session_awareness, insights, scheduled_reminders
+2026-05-12 14:32:02 WARNING [plugins] voice_output: pyttsx3 not installed — plugin disabled
+2026-05-12 14:33:10 ERROR [ollama_client] Connection refused — is Ollama running?</code></pre>
+
+  </main>
+  <footer class="site-footer"></footer>
+</div>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

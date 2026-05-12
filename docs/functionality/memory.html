@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Memory &amp; Notes — Hamster AI</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div id="sidebar"></div>
+<div class="page-wrap">
+  <header class="topbar">
+    <button class="hamburger" id="nav-toggle">☰</button>
+    <span class="topbar-breadcrumb"><a href="./">Functionality</a> / Memory &amp; Notes</span>
+  </header>
+  <main class="content">
+
+    <div class="page-header">
+      <h1>Memory &amp; Notes</h1>
+      <p class="lead">Hamster AI remembers what you tell it — and nothing you didn't.</p>
+    </div>
+
+    <h2>Memory Types</h2>
+    <table>
+      <thead><tr><th>Type</th><th>What it stores</th><th>Command</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Memories</strong></td><td>General facts and preferences</td><td><code>/remember</code></td></tr>
+        <tr><td><strong>To-dos</strong></td><td>Tasks to complete</td><td><code>/todo</code></td></tr>
+        <tr><td><strong>Notes</strong></td><td>Freeform notes</td><td><code>/note</code></td></tr>
+        <tr><td><strong>Feature backlog</strong></td><td>Unsupported things you asked for</td><td><code>/add-feature</code></td></tr>
+        <tr><td><strong>Preferences</strong></td><td>Inferred long-term habits (asked before saving)</td><td>Conversational</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Commands</h2>
+    <div class="cmd-row"><span class="cmd">/remember &lt;text&gt;</span><span class="cmd-desc">Save a memory. Example: <code>/remember I prefer short answers</code></span></div>
+    <div class="cmd-row"><span class="cmd">/todo &lt;task&gt;</span><span class="cmd-desc">Add a to-do. Example: <code>/todo buy batteries tomorrow</code></span></div>
+    <div class="cmd-row"><span class="cmd">/note &lt;text&gt;</span><span class="cmd-desc">Save a note. Example: <code>/note hotel checkout is 11am</code></span></div>
+    <div class="cmd-row"><span class="cmd">/show-memories</span><span class="cmd-desc">List all saved memories</span></div>
+    <div class="cmd-row"><span class="cmd">/show-todos</span><span class="cmd-desc">List all to-dos</span></div>
+    <div class="cmd-row"><span class="cmd">/show-notes</span><span class="cmd-desc">List all notes</span></div>
+    <div class="cmd-row"><span class="cmd">/search-memory &lt;term&gt;</span><span class="cmd-desc">Search across all memories, todos, and notes</span></div>
+    <div class="cmd-row"><span class="cmd">/show-features</span><span class="cmd-desc">Show the future feature backlog</span></div>
+    <div class="cmd-row"><span class="cmd">/add-feature &lt;text&gt;</span><span class="cmd-desc">Add an item to the feature backlog</span></div>
+
+    <h2>Preference Detection</h2>
+    <p>If Hamster AI notices a possible long-term preference during conversation, it asks before saving:</p>
+    <pre><code>Noted for this chat. Want me to remember that as a general preference?</code></pre>
+    <p>It will never silently save inferred preferences.</p>
+
+    <h2>Reminders</h2>
+    <p>Reminders are handled by the <strong>Scheduled Reminders</strong> plugin (enabled by default). They use natural language:</p>
+    <pre><code>/remind me at 6pm to check the build
+/remind me in 30 minutes to take a break
+/remind me tomorrow at 9am about the meeting</code></pre>
+    <p>Reminders fire as desktop notifications. During protected modes (Work, Private, Focus, Game Safe) they can be queued and delivered when the mode ends.</p>
+
+    <h2>Storage</h2>
+    <p>Everything is stored in a local SQLite database at <code>data/hamster_ai.db</code>. No data leaves your machine.</p>
+    <div class="callout warn">
+      <strong>To wipe all data</strong> Delete <code>data/hamster_ai.db</code>. The app will recreate an empty database on next launch. This cannot be undone.
+    </div>
+
+    <h2>Clearing Data</h2>
+    <p>You can clear specific data without deleting the whole database using Forget Mode commands:</p>
+    <div class="cmd-row"><span class="cmd">/forget-today</span><span class="cmd-desc">Clear today's session data and activity logs</span></div>
+    <div class="cmd-row"><span class="cmd">/forget-last-hour</span><span class="cmd-desc">Clear the last hour of activity</span></div>
+    <div class="cmd-row"><span class="cmd">/forget-session</span><span class="cmd-desc">Clear the current session</span></div>
+    <div class="cmd-row"><span class="cmd">/clear-activity</span><span class="cmd-desc">Clear all activity logs</span></div>
+
+  </main>
+  <footer class="site-footer"></footer>
+</div>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

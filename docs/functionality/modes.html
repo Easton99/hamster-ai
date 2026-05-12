@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modes — Hamster AI</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div id="sidebar"></div>
+<div class="page-wrap">
+  <header class="topbar">
+    <button class="hamburger" id="nav-toggle">☰</button>
+    <span class="topbar-breadcrumb"><a href="./">Functionality</a> / Modes</span>
+  </header>
+  <main class="content">
+
+    <div class="page-header">
+      <h1>Modes</h1>
+      <p class="lead">Hamster AI knows when to stay quiet. Modes suppress tracking, notifications, and interruptions automatically.</p>
+    </div>
+
+    <div class="callout info">
+      <strong>All modes are core features</strong> — they are not plugins and cannot be disabled. They always take priority over personality, plugins, and scheduled tasks.
+    </div>
+
+    <h2>Work Mode</h2>
+    <p>Work Mode activates automatically when a protected work application is detected — by default, <strong>Omnissa Horizon Client</strong> (a common corporate virtual desktop client).</p>
+    <h3>What it does</h3>
+    <ul>
+      <li>Disables greetings, notifications, and all plugin activity</li>
+      <li>Stops observation logging and window title recording</li>
+      <li>Does not call the LLM unless you manually open chat and ask</li>
+      <li>Does not create new memories</li>
+      <li>Shows "Work Mode active — Hamster AI paused" in the tray tooltip</li>
+    </ul>
+    <h3>Protected apps</h3>
+    <p>Work Mode triggers when a running process or window title contains: <code>horizon</code>, <code>vmware-view</code>, <code>omnissa</code>, or <code>vmware horizon</code>. You can add more apps in Settings → Mode Settings.</p>
+
+    <h2>Private Mode</h2>
+    <p>Private Mode can be toggled manually or triggered automatically by sensitive keywords in the active app or window title.</p>
+    <h3>What it does</h3>
+    <ul>
+      <li>Disables greetings, notifications, audio, and observation logging</li>
+      <li>Does not store window titles or create memories</li>
+      <li>Does not call the LLM automatically</li>
+      <li>Never analyses, summarises, or logs sensitive content</li>
+    </ul>
+    <div class="callout warn">
+      <strong>Privacy guarantee</strong> Hamster AI only pauses during Private Mode. It will never attempt to categorise or describe what you're doing.
+    </div>
+
+    <h2>Focus Mode</h2>
+    <p>Focus Mode is triggered manually and runs for a set duration.</p>
+    <h3>Commands</h3>
+    <div class="cmd-row"><span class="cmd">/focus 30</span><span class="cmd-desc">Start Focus Mode for 30 minutes</span></div>
+    <div class="cmd-row"><span class="cmd">/focus 1h</span><span class="cmd-desc">Start Focus Mode for 1 hour</span></div>
+    <div class="cmd-row"><span class="cmd">/quiet</span><span class="cmd-desc">Start Focus Mode with no time limit</span></div>
+    <div class="cmd-row"><span class="cmd">/resume</span><span class="cmd-desc">End Focus Mode early</span></div>
+    <h3>What it does</h3>
+    <ul>
+      <li>Pauses greetings, notifications, and plugin interruptions</li>
+      <li>You can still open chat manually and ask questions</li>
+      <li>Tray icon shows the remaining time</li>
+    </ul>
+
+    <h2>Game Safe Mode</h2>
+    <p>Game Safe Mode activates automatically when anti-cheat or game processes are detected.</p>
+    <h3>Detected processes</h3>
+    <pre><code>VALORANT.exe, RiotClientServices.exe, vgtray.exe, vgc.exe
+EasyAntiCheat.exe, EasyAntiCheat_EOS.exe
+BEService.exe, BattlEye.exe
+FortniteClient-Win64-Shipping.exe, cod.exe, r5apex.exe, cs2.exe</code></pre>
+    <h3>What it does</h3>
+    <ul>
+      <li>Pauses all plugins and disables overlays and the mini widget</li>
+      <li>Disables voice output and notifications</li>
+      <li>Does not log detailed game window titles</li>
+      <li>The app remains as a normal background tray process only — invisible to anti-cheat</li>
+    </ul>
+    <div class="callout tip">
+      <strong>Anti-cheat safety</strong> Hamster AI never injects into game processes, hooks graphics APIs, reads game memory, or automates input. It is safe to run alongside any game.
+    </div>
+
+    <h2>Forget Mode</h2>
+    <p>Forget Mode is not a persistent state — it's a set of commands that let you delete specific data on demand.</p>
+    <div class="cmd-row"><span class="cmd">/forget-today</span><span class="cmd-desc">Clear today's session data and activity logs</span></div>
+    <div class="cmd-row"><span class="cmd">/forget-last-hour</span><span class="cmd-desc">Clear the last hour of activity</span></div>
+    <div class="cmd-row"><span class="cmd">/forget-session</span><span class="cmd-desc">Clear the current session</span></div>
+    <div class="cmd-row"><span class="cmd">/forget-private</span><span class="cmd-desc">Clear any data recorded during the last private session</span></div>
+    <div class="cmd-row"><span class="cmd">/clear-activity</span><span class="cmd-desc">Clear all activity logs</span></div>
+
+  </main>
+  <footer class="site-footer"></footer>
+</div>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

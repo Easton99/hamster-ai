@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy — Hamster AI</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div id="sidebar"></div>
+<div class="page-wrap">
+  <header class="topbar">
+    <button class="hamburger" id="nav-toggle">☰</button>
+    <span class="topbar-breadcrumb">Privacy</span>
+  </header>
+  <main class="content">
+
+    <div class="page-header">
+      <h1>Privacy</h1>
+      <p class="lead">Hamster AI is built around one principle: your data stays on your machine.</p>
+    </div>
+
+    <div class="callout tip">
+      <strong>Short version</strong> Nothing leaves your PC. No telemetry, no cloud, no accounts. Everything runs locally.
+    </div>
+
+    <h2>What Hamster AI Never Does</h2>
+    <ul>
+      <li>Sends data to any external server</li>
+      <li>Takes screenshots or records your screen</li>
+      <li>Logs keystrokes or mouse input</li>
+      <li>Records audio (without the explicit Audio Awareness plugin, which only detects volume levels)</li>
+      <li>Reads game memory or injects into processes</li>
+      <li>Collects telemetry or crash reports</li>
+      <li>Creates accounts or requires sign-in</li>
+      <li>Access Work Mode or Private Mode content</li>
+    </ul>
+
+    <h2>What Is Stored Locally</h2>
+    <table>
+      <thead><tr><th>Data</th><th>Where</th><th>How to delete</th></tr></thead>
+      <tbody>
+        <tr><td>Memories, notes, todos</td><td><code>data/hamster_ai.db</code></td><td><code>/show-memories</code> → delete individually, or delete the database file</td></tr>
+        <tr><td>Activity logs (session types, durations)</td><td><code>data/hamster_ai.db</code></td><td><code>/clear-activity</code> or <code>/forget-today</code></td></tr>
+        <tr><td>Settings</td><td><code>data/hamster_ai.db</code></td><td>Reset to defaults from Settings window</td></tr>
+        <tr><td>App logs</td><td><code>data/logs/hamster_ai.log</code></td><td><code>/clear-logs</code> or delete the file</td></tr>
+        <tr><td>Personality profiles</td><td><code>config/personality_profiles.json</code></td><td>Edit or delete the file</td></tr>
+      </tbody>
+    </table>
+
+    <h2>What Is Never Stored</h2>
+    <ul>
+      <li>Work Mode window titles or activity</li>
+      <li>Private Mode window titles or activity</li>
+      <li>Audio recordings or transcripts</li>
+      <li>Screenshots or screen content</li>
+      <li>Raw chat message content in logs (only metadata)</li>
+    </ul>
+
+    <h2>LLM Inference</h2>
+    <p>All AI inference runs locally via <a href="https://ollama.com" target="_blank">Ollama</a>. Your messages are never sent to OpenAI, Anthropic, or any other external service. The model runs entirely on your hardware.</p>
+
+    <h2>Deleting Everything</h2>
+    <p>To completely wipe all Hamster AI data:</p>
+    <ol>
+      <li>Delete <code>data/hamster_ai.db</code> — removes all memories, settings, and activity logs</li>
+      <li>Delete <code>data/logs/</code> — removes all log files</li>
+      <li>Delete <code>config/personality_profiles.json</code> — removes custom personality profiles</li>
+    </ol>
+    <p>The app will recreate empty versions of these files on next launch.</p>
+
+    <h2>Open Source</h2>
+    <p>Hamster AI is open source under the GNU GPL v3. You can read every line of code that runs on your machine.</p>
+    <div class="btn-row">
+      <a href="https://github.com/Easton99/hamster-ai" class="btn btn-primary" target="_blank">View Source on GitHub</a>
+    </div>
+
+  </main>
+  <footer class="site-footer"></footer>
+</div>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

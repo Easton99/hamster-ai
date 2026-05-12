@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>General Settings — Hamster AI</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div id="sidebar"></div>
+<div class="page-wrap">
+  <header class="topbar">
+    <button class="hamburger" id="nav-toggle">☰</button>
+    <span class="topbar-breadcrumb"><a href="./">Settings</a> / General</span>
+  </header>
+  <main class="content">
+
+    <div class="page-header">
+      <h1>General Settings</h1>
+      <p class="lead">Core app configuration — model, connectivity, hotkey, and startup.</p>
+    </div>
+
+    <h2>Model &amp; Connection</h2>
+    <table>
+      <thead><tr><th>Setting</th><th>Default</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Ollama URL</td><td><code>http://localhost:11434</code></td><td>The address of your Ollama instance. Change this if Ollama runs on a different port or machine.</td></tr>
+        <tr><td>Active model</td><td>First available</td><td>The Ollama model to use for chat. Populated from your installed models. Switching takes effect on the next message.</td></tr>
+        <tr><td>Connection timeout (s)</td><td>30</td><td>How long to wait for Ollama before showing a timeout error.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout tip">
+      <strong>Tip</strong> Use <code>/status</code> in chat to quickly see which model is active and whether Ollama is reachable.
+    </div>
+
+    <h2>Startup</h2>
+    <table>
+      <thead><tr><th>Setting</th><th>Default</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Start with Windows</td><td>Off</td><td>Adds a registry entry to launch Hamster AI when you log in.</td></tr>
+        <tr><td>Startup delay (seconds)</td><td>45</td><td>How long to wait after login before launching. Gives Windows time to settle.</td></tr>
+        <tr><td>Greet on startup</td><td>On</td><td>Show a greeting message when the app starts. Suppressed if any protected mode is active.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Global Hotkey</h2>
+    <table>
+      <thead><tr><th>Setting</th><th>Default</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Chat hotkey</td><td><code>Ctrl+Shift+H</code></td><td>Opens or focuses the main chat window from anywhere.</td></tr>
+      </tbody>
+    </table>
+    <div class="callout warn">
+      <strong>Conflict</strong> If the hotkey doesn't work, another application may have registered the same shortcut. Change it here and the new binding takes effect immediately.
+    </div>
+
+    <h2>Chat</h2>
+    <table>
+      <thead><tr><th>Setting</th><th>Default</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Show timestamps</td><td>Off</td><td>Display send/receive times next to each message in the chat window. Can be toggled at any time.</td></tr>
+        <tr><td>Max chat history shown</td><td>100</td><td>Number of messages displayed in the chat window. Older messages scroll off but are not deleted.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Notifications</h2>
+    <table>
+      <thead><tr><th>Setting</th><th>Default</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Desktop notifications</td><td>On</td><td>Show Windows toast notifications for reminders and alerts.</td></tr>
+        <tr><td>Notification history</td><td>On</td><td>Keep a log of all notifications in the Notification History window.</td></tr>
+      </tbody>
+    </table>
+
+  </main>
+  <footer class="site-footer"></footer>
+</div>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

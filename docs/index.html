@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hamster AI — Local Windows AI Companion</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div id="sidebar"></div>
+<div class="page-wrap">
+  <header class="topbar">
+    <button class="hamburger" id="nav-toggle">☰</button>
+    <span class="topbar-breadcrumb">Home</span>
+  </header>
+
+  <main class="content">
+
+    <div class="hero">
+      <div class="hero-icon">
+        <svg width="80" height="80" viewBox="0 0 64 64" fill="none">
+          <ellipse cx="16" cy="12" rx="10" ry="10" fill="#F5E6D3" stroke="#A67C52" stroke-width="2"/>
+          <ellipse cx="48" cy="12" rx="10" ry="10" fill="#F5E6D3" stroke="#A67C52" stroke-width="2"/>
+          <ellipse cx="32" cy="36" rx="24" ry="22" fill="#F5E6D3" stroke="#A67C52" stroke-width="2"/>
+          <ellipse cx="13" cy="41" rx="9" ry="7" fill="#F2B880"/>
+          <ellipse cx="51" cy="41" rx="9" ry="7" fill="#F2B880"/>
+          <ellipse cx="32" cy="44" rx="6" ry="4" fill="#A67C52"/>
+        </svg>
+      </div>
+      <h1>Hamster AI</h1>
+      <p class="lead">A lightweight, local-first AI companion for Windows.<br>No cloud. No subscriptions. No data leaving your machine.</p>
+      <div class="hero-badges">
+        <span class="badge">Fully Offline</span>
+        <span class="badge">Ollama Powered</span>
+        <span class="badge">Plugin System</span>
+        <span class="badge">Windows 10/11</span>
+        <span class="badge">Open Source</span>
+      </div>
+      <br>
+      <div class="btn-row" style="justify-content:center">
+        <a href="getting-started/" class="btn btn-primary">Get Started</a>
+        <a href="https://github.com/Easton99/hamster-ai" class="btn btn-secondary" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+
+    <h2>What is Hamster AI?</h2>
+    <p>Hamster AI sits quietly in your system tray and helps you remember things, set reminders, keep track of your day, and answer questions — all without ever sending data to the cloud. Everything runs on your own PC using <a href="https://ollama.com" target="_blank">Ollama</a> for local LLM inference.</p>
+    <p>It's not a productivity manager or a spyware tool. It's a small, helpful desktop companion that stays out of your way until you need it.</p>
+
+    <h2>Key Features</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="icon">🔒</div>
+        <h3>Fully Offline</h3>
+        <p>All inference runs locally via Ollama. No internet required for core features.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🧠</div>
+        <h3>Memory System</h3>
+        <p>Remembers facts, notes, and todos across sessions using a local SQLite database.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🔔</div>
+        <h3>Reminders</h3>
+        <p>Set natural-language reminders. <code>/remind me at 6pm to check the build</code></p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🛡️</div>
+        <h3>Mode System</h3>
+        <p>Work, Focus, Private, and Game Safe modes suppress notifications and tracking automatically.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🧩</div>
+        <h3>Plugin System</h3>
+        <p>Optional features load at startup. Enable only what you need.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">⌨️</div>
+        <h3>Global Hotkey</h3>
+        <p>Open chat from anywhere with <code>Ctrl+Shift+H</code> (customisable).</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🪟</div>
+        <h3>Mini Widget</h3>
+        <p>A small always-on-top input bar for quick questions without opening the full chat.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🔧</div>
+        <h3>Diagnostics</h3>
+        <p>Built-in health checks, logs, and self-fix suggestions so problems don't stay hidden.</p>
+      </div>
+    </div>
+
+    <h2>Prerequisites</h2>
+    <table>
+      <thead><tr><th>Requirement</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Windows 10 or 11 (64-bit)</td><td>Required</td></tr>
+        <tr><td>Python 3.11+</td><td><a href="https://www.python.org/downloads/" target="_blank">python.org</a></td></tr>
+        <tr><td>Ollama</td><td><a href="https://ollama.com" target="_blank">ollama.com</a> — must be running</td></tr>
+        <tr><td>An Ollama model</td><td><code>ollama pull llama3.2:3b</code> is a good starting point</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Quick Start</h2>
+    <pre><code>git clone https://github.com/Easton99/hamster-ai.git
+cd hamster-ai
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+ollama pull llama3.2:3b
+ollama serve
+python app/main.py</code></pre>
+    <p>A hamster icon will appear in your system tray. Right-click it to open the menu, or use <code>Ctrl+Shift+H</code> to open chat.</p>
+
+    <div class="btn-row">
+      <a href="getting-started/" class="btn btn-primary">Full Install Guide</a>
+      <a href="functionality/" class="btn btn-secondary">Explore Features</a>
+    </div>
+
+  </main>
+  <footer class="site-footer"></footer>
+</div>
+<script src="assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Commands — Hamster AI</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div id="sidebar"></div>
+<div class="page-wrap">
+  <header class="topbar">
+    <button class="hamburger" id="nav-toggle">☰</button>
+    <span class="topbar-breadcrumb"><a href="./">Functionality</a> / Commands</span>
+  </header>
+  <main class="content">
+
+    <div class="page-header">
+      <h1>Commands</h1>
+      <p class="lead">Type any command in the chat window. Plugins may register additional commands.</p>
+    </div>
+
+    <div class="callout tip">
+      <strong>Tip</strong> Type <code>/help</code> in chat to see all commands currently available, including any registered by active plugins.
+    </div>
+
+    <h2>Status &amp; Health</h2>
+    <div class="cmd-row"><span class="cmd">/status</span><span class="cmd-desc">Show app status — model, mode, plugin summary, uptime</span></div>
+    <div class="cmd-row"><span class="cmd">/health</span><span class="cmd-desc">Run all health checks and display results</span></div>
+    <div class="cmd-row"><span class="cmd">/logs</span><span class="cmd-desc">Show recent log entries</span></div>
+    <div class="cmd-row"><span class="cmd">/errors</span><span class="cmd-desc">Show recent errors only</span></div>
+    <div class="cmd-row"><span class="cmd">/fix</span><span class="cmd-desc">Show available self-fix suggestions</span></div>
+    <div class="cmd-row"><span class="cmd">/system</span><span class="cmd-desc">Show a system stats snapshot (CPU, RAM, disk)</span></div>
+    <div class="cmd-row"><span class="cmd">/processes</span><span class="cmd-desc">List running processes (requires Process Awareness plugin)</span></div>
+
+    <h2>Memory &amp; Notes</h2>
+    <div class="cmd-row"><span class="cmd">/remember &lt;text&gt;</span><span class="cmd-desc">Save a memory</span></div>
+    <div class="cmd-row"><span class="cmd">/todo &lt;task&gt;</span><span class="cmd-desc">Add a to-do item</span></div>
+    <div class="cmd-row"><span class="cmd">/note &lt;text&gt;</span><span class="cmd-desc">Save a note</span></div>
+    <div class="cmd-row"><span class="cmd">/show-memories</span><span class="cmd-desc">List all saved memories</span></div>
+    <div class="cmd-row"><span class="cmd">/show-todos</span><span class="cmd-desc">List all to-dos</span></div>
+    <div class="cmd-row"><span class="cmd">/show-notes</span><span class="cmd-desc">List all notes</span></div>
+    <div class="cmd-row"><span class="cmd">/search-memory &lt;term&gt;</span><span class="cmd-desc">Search across memories, todos, and notes</span></div>
+
+    <h2>Reminders</h2>
+    <div class="cmd-row"><span class="cmd">/remind me at &lt;time&gt; to &lt;task&gt;</span><span class="cmd-desc">Set a time-based reminder. Example: <code>/remind me at 6pm to check the build</code></span></div>
+    <div class="cmd-row"><span class="cmd">/remind me in &lt;duration&gt; to &lt;task&gt;</span><span class="cmd-desc">Set a relative reminder. Example: <code>/remind me in 30 minutes to take a break</code></span></div>
+
+    <h2>Modes</h2>
+    <div class="cmd-row"><span class="cmd">/focus &lt;minutes&gt;</span><span class="cmd-desc">Start Focus Mode for N minutes. Example: <code>/focus 30</code>, <code>/focus 1h</code></span></div>
+    <div class="cmd-row"><span class="cmd">/quiet</span><span class="cmd-desc">Start Focus Mode with no time limit</span></div>
+    <div class="cmd-row"><span class="cmd">/resume</span><span class="cmd-desc">End Focus Mode</span></div>
+
+    <h2>Forget Mode</h2>
+    <div class="cmd-row"><span class="cmd">/forget-today</span><span class="cmd-desc">Clear today's session data and activity logs</span></div>
+    <div class="cmd-row"><span class="cmd">/forget-last-hour</span><span class="cmd-desc">Clear the last hour of activity</span></div>
+    <div class="cmd-row"><span class="cmd">/forget-session</span><span class="cmd-desc">Clear the current session</span></div>
+    <div class="cmd-row"><span class="cmd">/forget-private</span><span class="cmd-desc">Clear data from the last private session</span></div>
+    <div class="cmd-row"><span class="cmd">/clear-activity</span><span class="cmd-desc">Clear all activity logs</span></div>
+    <div class="cmd-row"><span class="cmd">/clear-logs</span><span class="cmd-desc">Clear the log file</span></div>
+
+    <h2>Feature Backlog</h2>
+    <div class="cmd-row"><span class="cmd">/show-features</span><span class="cmd-desc">Show the future feature backlog</span></div>
+    <div class="cmd-row"><span class="cmd">/add-feature &lt;text&gt;</span><span class="cmd-desc">Add an item to the backlog</span></div>
+    <div class="cmd-row"><span class="cmd">/feature-planned &lt;id&gt;</span><span class="cmd-desc">Mark a feature as planned</span></div>
+    <div class="cmd-row"><span class="cmd">/feature-done &lt;id&gt;</span><span class="cmd-desc">Mark a feature as done</span></div>
+    <div class="cmd-row"><span class="cmd">/delete-feature &lt;id&gt;</span><span class="cmd-desc">Remove a feature from the backlog</span></div>
+
+    <h2>Plugin Commands</h2>
+    <p>Active plugins register their own commands. Common examples:</p>
+    <div class="cmd-row"><span class="cmd">/voice</span><span class="cmd-desc">Toggle voice output on/off (Voice Output plugin)</span></div>
+    <div class="cmd-row"><span class="cmd">/voice-test</span><span class="cmd-desc">Test text-to-speech (Voice Output plugin)</span></div>
+
+  </main>
+  <footer class="site-footer"></footer>
+</div>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

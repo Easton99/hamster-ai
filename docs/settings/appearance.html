@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Appearance Settings — Hamster AI</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div id="sidebar"></div>
+<div class="page-wrap">
+  <header class="topbar">
+    <button class="hamburger" id="nav-toggle">☰</button>
+    <span class="topbar-breadcrumb"><a href="./">Settings</a> / Appearance</span>
+  </header>
+  <main class="content">
+
+    <div class="page-header">
+      <h1>Appearance Settings</h1>
+      <p class="lead">Themes, colours, and mini widget positioning.</p>
+    </div>
+
+    <h2>Theme</h2>
+    <p>Choose a theme from Settings → Appearance. Changes apply instantly across all windows.</p>
+    <table>
+      <thead><tr><th>Theme</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Soft Hamster Minimal</strong> <span class="tag on">Default</span></td>
+          <td>Warm beige tones. Easy on the eyes. The signature Hamster AI look.</td>
+        </tr>
+        <tr>
+          <td><strong>Dark Hamster</strong></td>
+          <td>Dark background with the same warm accent colours. Good for low-light environments.</td>
+        </tr>
+        <tr>
+          <td><strong>High Contrast</strong></td>
+          <td>Black background with yellow accents. Maximum readability.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Colour Palette (Soft Hamster Minimal)</h3>
+    <table>
+      <thead><tr><th>Role</th><th>Colour</th></tr></thead>
+      <tbody>
+        <tr><td>Background</td><td><code>#FAF7F2</code></td></tr>
+        <tr><td>Primary surface</td><td><code>#F5E6D3</code></td></tr>
+        <tr><td>Accent</td><td><code>#A67C52</code></td></tr>
+        <tr><td>Secondary</td><td><code>#F2B880</code></td></tr>
+        <tr><td>Text</td><td><code>#3E2C1C</code></td></tr>
+      </tbody>
+    </table>
+
+    <h2>Mini Widget</h2>
+    <p>Configure how the mini widget is positioned on your screen.</p>
+    <table>
+      <thead><tr><th>Setting</th><th>Default</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Corner</td><td>Bottom-right</td><td>Which corner of the screen the widget anchors to. Options: bottom-right, bottom-left, top-right, top-left.</td></tr>
+        <tr><td>Horizontal offset (px)</td><td>20</td><td>Distance from the screen edge horizontally.</td></tr>
+        <tr><td>Vertical offset (px)</td><td>20</td><td>Distance from the screen edge vertically.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout tip">
+      <strong>Multi-monitor</strong> The mini widget appears on the primary monitor. If you move it manually, its position resets to the configured corner on next launch.
+    </div>
+
+  </main>
+  <footer class="site-footer"></footer>
+</div>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

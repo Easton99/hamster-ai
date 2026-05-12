@@ -122,13 +122,11 @@ Enable or disable plugins via **right-click tray → Plugins**.
 | Process Awareness | Running processes, internet apps, startup programs | — |
 | Audio Awareness | Detects whether audio is playing before interrupting | `pycaw` |
 | Voice Output | Speaks replies using Windows SAPI (local TTS) | `pyttsx3` |
-| Discord Translation | Transcribes system audio locally using Whisper | `PyAudioWPatch faster-whisper webrtcvad numpy` |
-
 Optional dependencies can be installed all at once:
 
 ```powershell
 # Audio plugins
-pip install pyttsx3 PyAudioWPatch faster-whisper webrtcvad numpy pycaw
+pip install pyttsx3 pycaw
 
 # Hardware/stats plugins
 pip install GPUtil pywin32 wmi
@@ -166,7 +164,6 @@ Hamster AI is built around a simple principle: **your data stays on your machine
 
 - No telemetry, no analytics, no crash reporting to any server
 - No screenshots are ever taken
-- Audio capture (Discord Translation plugin) only runs when you explicitly start it; audio is never saved to disk
 - Work Mode and Private Mode disable all tracking and notifications while active
 - All memories, notes, todos, and reminders live in `data/hamster_ai.db` on your PC — delete the file to wipe everything
 

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Health Checks — Hamster AI</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div id="sidebar"></div>
+<div class="page-wrap">
+  <header class="topbar">
+    <button class="hamburger" id="nav-toggle">☰</button>
+    <span class="topbar-breadcrumb"><a href="./">Diagnostics</a> / Health Checks</span>
+  </header>
+  <main class="content">
+
+    <div class="page-header">
+      <h1>Health Checks</h1>
+      <p class="lead">Automated checks that verify your Hamster AI installation is working correctly.</p>
+    </div>
+
+    <p>Run health checks any time with <code>/health</code> in chat, or from the Diagnostics window. Each check returns a pass, warning, or fail status with a brief explanation.</p>
+
+    <h2>Checks Performed</h2>
+    <table>
+      <thead><tr><th>Check</th><th>What it verifies</th><th>Common failure reason</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Ollama running</strong></td>
+          <td>Ollama is reachable at the configured URL</td>
+          <td>Ollama not started — run <code>ollama serve</code></td>
+        </tr>
+        <tr>
+          <td><strong>Model installed</strong></td>
+          <td>The selected model is available in Ollama</td>
+          <td>Model not pulled — run <code>ollama pull &lt;model&gt;</code></td>
+        </tr>
+        <tr>
+          <td><strong>Database accessible</strong></td>
+          <td>SQLite database can be read and written</td>
+          <td>Database file locked or corrupt — check <code>data/hamster_ai.db</code></td>
+        </tr>
+        <tr>
+          <td><strong>Plugin load failures</strong></td>
+          <td>All enabled plugins loaded without errors</td>
+          <td>Missing optional dependency — see plugin details</td>
+        </tr>
+        <tr>
+          <td><strong>Config files valid</strong></td>
+          <td>JSON config files are parseable</td>
+          <td>Manual edit introduced a syntax error</td>
+        </tr>
+        <tr>
+          <td><strong>Data folder writable</strong></td>
+          <td>The <code>data/</code> directory can be written to</td>
+          <td>Permissions issue or drive full</td>
+        </tr>
+        <tr>
+          <td><strong>Disk space</strong></td>
+          <td>At least 500 MB free on the drive</td>
+          <td>Drive nearly full</td>
+        </tr>
+        <tr>
+          <td><strong>Startup registration</strong></td>
+          <td>If "Start with Windows" is on, the registry entry is valid</td>
+          <td>Python path changed after enabling startup</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Check Results</h2>
+    <table>
+      <thead><tr><th>Status</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td>✅ Pass</td><td>Everything looks good</td></tr>
+        <tr><td>⚠️ Warning</td><td>Something is off but the app can still run</td></tr>
+        <tr><td>❌ Fail</td><td>A critical component is broken — action required</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Running on Startup</h2>
+    <p>A subset of health checks runs automatically when Hamster AI starts. Any failures are logged and shown in the Diagnostics window. Critical failures (e.g. Ollama not running) show a tray notification.</p>
+
+  </main>
+  <footer class="site-footer"></footer>
+</div>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

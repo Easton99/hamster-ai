@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diagnostics — Hamster AI</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div id="sidebar"></div>
+<div class="page-wrap">
+  <header class="topbar">
+    <button class="hamburger" id="nav-toggle">☰</button>
+    <span class="topbar-breadcrumb">Diagnostics</span>
+  </header>
+  <main class="content">
+
+    <div class="page-header">
+      <h1>Diagnostics</h1>
+      <p class="lead">Built-in tools for understanding what's happening inside Hamster AI.</p>
+    </div>
+
+    <h2>Opening Diagnostics</h2>
+    <p>Right-click the tray icon → <strong>Diagnostics</strong>. The diagnostics window shows current-session errors at the top and an expandable section for older history below.</p>
+    <p>You can also run a quick check in chat with <code>/health</code>.</p>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="icon">✅</div>
+        <h3><a href="health-checks">Health Checks</a></h3>
+        <p>A set of automated checks that verify Ollama, models, plugins, storage, and more.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📋</div>
+        <h3><a href="logs">Logs</a></h3>
+        <p>Rotating log files stored locally. View them in-app or open the file directly.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🔧</div>
+        <h3><a href="self-fix">Self-Fix</a></h3>
+        <p>Suggested fixes for common problems. Hamster AI always asks before applying anything.</p>
+      </div>
+    </div>
+
+    <h2>Diagnostics Window</h2>
+    <p>The diagnostics window includes:</p>
+    <ul>
+      <li><strong>Current session errors</strong> — errors from this run, shown at the top</li>
+      <li><strong>Older errors</strong> — expandable section for historical errors</li>
+      <li><strong>Health check results</strong> — run on demand or on startup</li>
+      <li><strong>Self-fix suggestions</strong> — context-aware fix recommendations</li>
+      <li><strong>Export diagnostic bundle</strong> — creates a zip of logs and config for sharing</li>
+      <li><strong>Clear logs</strong> — wipes the log file</li>
+    </ul>
+
+    <div class="callout tip">
+      <strong>First step for any issue</strong> Open Diagnostics and run a health check. It'll usually tell you exactly what's wrong.
+    </div>
+
+  </main>
+  <footer class="site-footer"></footer>
+</div>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

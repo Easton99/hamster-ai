@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Optional Plugins — Hamster AI</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div id="sidebar"></div>
+<div class="page-wrap">
+  <header class="topbar">
+    <button class="hamburger" id="nav-toggle">☰</button>
+    <span class="topbar-breadcrumb"><a href="./">Plugins</a> / Optional Plugins</span>
+  </header>
+  <main class="content">
+
+    <div class="page-header">
+      <h1>Optional Plugins</h1>
+      <p class="lead">Disabled by default. Enable them from the tray → Plugins. Some require extra packages.</p>
+    </div>
+
+    <div class="plugin-card">
+      <h3>Process Awareness</h3>
+      <div class="plugin-meta">
+        <span class="tag off">Off by default</span>
+        <span class="tag">No extra dependencies</span>
+      </div>
+      <p>Gives Hamster AI visibility into what's running on your PC — running processes, apps using the internet, and programs set to start with Windows.</p>
+      <h4>Example questions it enables</h4>
+      <ul>
+        <li>"What's running right now?"</li>
+        <li>"Which apps are using the internet?"</li>
+        <li>"What starts when Windows boots?"</li>
+      </ul>
+      <h4>Settings</h4>
+      <table>
+        <thead><tr><th>Setting</th><th>Default</th></tr></thead>
+        <tbody>
+          <tr><td>Show remote addresses</td><td>Off</td></tr>
+          <tr><td>Include in LLM context</td><td>Off</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="plugin-card">
+      <h3>Audio Awareness</h3>
+      <div class="plugin-meta">
+        <span class="tag off">Off by default</span>
+        <span class="tag">Requires: <code>pip install pycaw</code></span>
+      </div>
+      <p>Detects whether system audio is currently playing. Hamster AI uses this to avoid interrupting you during calls, music, or video playback.</p>
+      <h4>What it does</h4>
+      <ul>
+        <li>Suppresses greetings and notifications while audio is active</li>
+        <li>Does not record, capture, or process audio content</li>
+        <li>No audio is ever saved to disk</li>
+      </ul>
+    </div>
+
+    <div class="plugin-card">
+      <h3>Voice Output</h3>
+      <div class="plugin-meta">
+        <span class="tag off">Off by default</span>
+        <span class="tag">Requires: <code>pip install pyttsx3</code></span>
+      </div>
+      <p>Speaks Hamster AI's replies aloud using Windows SAPI (local text-to-speech). All speech is generated on-device — no cloud TTS.</p>
+      <h4>Commands</h4>
+      <div class="cmd-row"><span class="cmd">/voice</span><span class="cmd-desc">Toggle voice output on or off</span></div>
+      <div class="cmd-row"><span class="cmd">/voice-test</span><span class="cmd-desc">Test that speech is working</span></div>
+      <h4>Settings</h4>
+      <table>
+        <thead><tr><th>Setting</th><th>Default</th></tr></thead>
+        <tbody>
+          <tr><td>Voice enabled</td><td>Off</td></tr>
+          <tr><td>Speak greetings</td><td>Off</td></tr>
+          <tr><td>Speak chat replies</td><td>Off</td></tr>
+          <tr><td>Voice speed</td><td>Medium</td></tr>
+          <tr><td>Voice volume</td><td>100%</td></tr>
+        </tbody>
+      </table>
+      <p>Voice output is automatically suppressed during Work Mode, Private Mode, Focus Mode, and Game Safe Mode. It also respects Audio Awareness — it won't speak over active system audio if that plugin is enabled.</p>
+    </div>
+
+    <div class="plugin-card">
+      <h3>Extended System Stats</h3>
+      <div class="plugin-meta">
+        <span class="tag off">Off by default</span>
+        <span class="tag">Requires: <code>pip install GPUtil pywin32 wmi</code></span>
+      </div>
+      <p>Adds detailed system monitoring beyond the built-in CPU/RAM: GPU usage and temperature, per-process resource usage, disk usage, and network bandwidth.</p>
+      <h4>Settings</h4>
+      <table>
+        <thead><tr><th>Setting</th><th>Default</th></tr></thead>
+        <tbody>
+          <tr><td>Poll interval (seconds)</td><td>30</td></tr>
+          <tr><td>Top processes to track</td><td>5</td></tr>
+          <tr><td>Warn CPU above (%)</td><td>90</td></tr>
+          <tr><td>Warn RAM above (%)</td><td>90</td></tr>
+          <tr><td>Warn disk above (%)</td><td>90</td></tr>
+          <tr><td>Warn GPU temp above (°C)</td><td>85</td></tr>
+          <tr><td>Include in LLM context</td><td>On</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="plugin-card">
+      <h3>Hardware Awareness</h3>
+      <div class="plugin-meta">
+        <span class="tag off">Off by default</span>
+        <span class="tag">Requires: <code>pip install pywin32 wmi</code></span>
+      </div>
+      <p>Monitors connected hardware — monitors, USB devices, battery status, and internet connectivity. Alerts you to relevant changes (e.g. battery running low, USB device connected).</p>
+      <h4>Settings</h4>
+      <table>
+        <thead><tr><th>Setting</th><th>Default</th></tr></thead>
+        <tbody>
+          <tr><td>Warn battery below (%)</td><td>20</td></tr>
+          <tr><td>Critical battery below (%)</td><td>10</td></tr>
+          <tr><td>USB connect/disconnect alerts</td><td>On</td></tr>
+          <tr><td>Internet connectivity check</td><td>On</td></tr>
+          <tr><td>Include in LLM context</td><td>On</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+  <footer class="site-footer"></footer>
+</div>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

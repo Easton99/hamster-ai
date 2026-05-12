@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Default Plugins — Hamster AI</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div id="sidebar"></div>
+<div class="page-wrap">
+  <header class="topbar">
+    <button class="hamburger" id="nav-toggle">☰</button>
+    <span class="topbar-breadcrumb"><a href="./">Plugins</a> / Default Plugins</span>
+  </header>
+  <main class="content">
+
+    <div class="page-header">
+      <h1>Default Plugins</h1>
+      <p class="lead">These plugins are enabled out of the box and require no extra dependencies.</p>
+    </div>
+
+    <div class="plugin-card">
+      <h3>Session Awareness</h3>
+      <div class="plugin-meta">
+        <span class="tag on">On by default</span>
+        <span class="tag">No extra dependencies</span>
+      </div>
+      <p>Detects what kind of session you're having — coding, gaming, browsing, or idle — based on the active window and process. Uses this to reduce interruptions during focused work and provide smarter context to the LLM.</p>
+      <h4>Session types detected</h4>
+      <table>
+        <thead><tr><th>Session type</th><th>Example signals</th></tr></thead>
+        <tbody>
+          <tr><td>Coding</td><td>VS Code, terminal, SSMS active</td></tr>
+          <tr><td>Gaming</td><td>Fullscreen game process detected</td></tr>
+          <tr><td>Browsing</td><td>Browser in foreground</td></tr>
+          <tr><td>Media</td><td>Browser with video title, media player</td></tr>
+          <tr><td>Idle</td><td>No input detected for extended period</td></tr>
+        </tbody>
+      </table>
+      <p>Session data is stored as broad summaries only — no window titles from Work or Private Mode are ever saved.</p>
+    </div>
+
+    <div class="plugin-card">
+      <h3>Insights</h3>
+      <div class="plugin-meta">
+        <span class="tag on">On by default</span>
+        <span class="tag">No extra dependencies</span>
+      </div>
+      <p>Generates brief activity summaries at the end of the day and the end of the week, based on session data.</p>
+      <h4>Example end-of-day summary</h4>
+      <pre><code>Today looked like:
+- coding: 2h 10m
+- gaming: 1h 40m
+- browsing: 45m
+
+Quietly productive. Not bad.</code></pre>
+      <h4>Example weekly insight</h4>
+      <pre><code>This week:
+- more coding than usual
+- gaming mostly late evening
+- several long PC sessions</code></pre>
+      <p>Summaries appear once per day and once per week. No scoring, no judgement. Summaries never include Work Mode or Private Mode data.</p>
+    </div>
+
+    <div class="plugin-card">
+      <h3>Scheduled Reminders</h3>
+      <div class="plugin-meta">
+        <span class="tag on">On by default</span>
+        <span class="tag">No extra dependencies</span>
+      </div>
+      <p>Handles time-based reminders set with natural language in chat.</p>
+      <h4>Example usage</h4>
+      <pre><code>/remind me at 6pm to check the build
+/remind me in 30 minutes to take a break
+/remind me tomorrow at 9am about the standup</code></pre>
+      <h4>Settings</h4>
+      <table>
+        <thead><tr><th>Setting</th><th>Default</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>Queue during protected modes</td><td>On</td><td>Reminders are held and delivered when the mode ends</td></tr>
+          <tr><td>Speak reminders aloud</td><td>Off</td><td>Requires the Voice Output plugin to be active</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+  <footer class="site-footer"></footer>
+</div>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

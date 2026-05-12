@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plugins — Hamster AI</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div id="sidebar"></div>
+<div class="page-wrap">
+  <header class="topbar">
+    <button class="hamburger" id="nav-toggle">☰</button>
+    <span class="topbar-breadcrumb">Plugins</span>
+  </header>
+  <main class="content">
+
+    <div class="page-header">
+      <h1>Plugins</h1>
+      <p class="lead">Optional features that load at startup. Enable only what you need.</p>
+    </div>
+
+    <h2>How the Plugin System Works</h2>
+    <p>Plugins live in the <code>plugins/</code> folder, each in their own sub-folder. They are discovered automatically on startup. Plugins can:</p>
+    <ul>
+      <li>Subscribe to app events (window changed, session started, day ended, etc.)</li>
+      <li>Register new slash commands</li>
+      <li>Add context to the LLM prompt</li>
+      <li>Store data in the local database</li>
+      <li>Show desktop notifications</li>
+    </ul>
+
+    <h3>Enabling and Disabling</h3>
+    <p>Right-click the tray icon → <strong>Plugins</strong>. Each plugin can be toggled on or off without restarting the app.</p>
+
+    <h3>Plugin Safety</h3>
+    <ul>
+      <li>A plugin crash cannot bring down the app — each plugin runs in its own isolated context</li>
+      <li>Plugins always respect Work Mode, Private Mode, Focus Mode, and Game Safe Mode</li>
+      <li>All data stored by plugins can be deleted by core Forget Mode commands</li>
+      <li>Plugins can only store data through approved storage APIs — no direct database access</li>
+    </ul>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="icon">✅</div>
+        <h3><a href="default">Default Plugins</a></h3>
+        <p>Enabled out of the box. No extra dependencies required.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">⚙️</div>
+        <h3><a href="optional">Optional Plugins</a></h3>
+        <p>Disabled by default. Some require extra pip packages to install.</p>
+      </div>
+    </div>
+
+    <h2>Writing Your Own Plugin</h2>
+    <p>Create a folder in <code>plugins/</code> with a <code>plugin.py</code> and <code>config.json</code>:</p>
+    <pre><code>plugins/
+  my_plugin/
+    plugin.py
+    config.json</code></pre>
+
+    <h3>plugin.py structure</h3>
+    <pre><code>from app.plugins.plugin_base import PluginBase
+
+class Plugin(PluginBase):
+    name = "my_plugin"
+    description = "Does something useful."
+    enabled_by_default = False
+
+    def on_start(self, app): ...
+    def on_stop(self, app): ...
+    def on_event(self, event, data): ...
+    def get_commands(self): return []</code></pre>
+
+    <h3>config.json structure</h3>
+    <pre><code>{
+  "name": "my_plugin",
+  "description": "Does something useful.",
+  "enabled_by_default": false
+}</code></pre>
+
+    <p>Hamster AI will discover and load it automatically on next startup.</p>
+
+  </main>
+  <footer class="site-footer"></footer>
+</div>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

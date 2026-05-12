@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Getting Started — Hamster AI</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div id="sidebar"></div>
+<div class="page-wrap">
+  <header class="topbar">
+    <button class="hamburger" id="nav-toggle">☰</button>
+    <span class="topbar-breadcrumb">Getting Started</span>
+  </header>
+  <main class="content">
+
+    <div class="page-header">
+      <h1>Getting Started</h1>
+      <p class="lead">Get Hamster AI running on your PC in a few minutes.</p>
+    </div>
+
+    <h2>Prerequisites</h2>
+    <table>
+      <thead><tr><th>Requirement</th><th>Version</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Windows</td><td>10 or 11 (64-bit)</td><td>Required</td></tr>
+        <tr><td>Python</td><td>3.11 or newer</td><td><a href="https://www.python.org/downloads/" target="_blank">Download from python.org</a>. Tick "Add to PATH" during install.</td></tr>
+        <tr><td>Ollama</td><td>Latest</td><td><a href="https://ollama.com" target="_blank">Download from ollama.com</a>. Must be running before launching Hamster AI.</td></tr>
+        <tr><td>Git</td><td>Any</td><td>Optional — you can also download a ZIP from GitHub.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout tip">
+      <strong>Tip</strong>
+      Any Ollama model works. Smaller models (3B–7B parameters) use less RAM and respond faster. <code>llama3.2:3b</code> is a good starting point.
+    </div>
+
+    <h2>Installation</h2>
+    <ol class="steps">
+      <li>
+        <h4>Clone the repository</h4>
+        <pre><code>git clone https://github.com/Easton99/hamster-ai.git
+cd hamster-ai</code></pre>
+        <p>Or download the ZIP from GitHub and extract it.</p>
+      </li>
+      <li>
+        <h4>Create a virtual environment</h4>
+        <pre><code>python -m venv .venv
+.venv\Scripts\Activate.ps1</code></pre>
+        <div class="callout info"><strong>Note</strong> If PowerShell blocks script execution, run <code>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code> first.</div>
+      </li>
+      <li>
+        <h4>Install dependencies</h4>
+        <pre><code>pip install -r requirements.txt</code></pre>
+      </li>
+      <li>
+        <h4>Pull an Ollama model</h4>
+        <pre><code>ollama pull llama3.2:3b</code></pre>
+        <p>You can switch models later from the Settings window.</p>
+      </li>
+      <li>
+        <h4>Start Ollama</h4>
+        <pre><code>ollama serve</code></pre>
+        <p>Keep this running in the background. You can configure Ollama to start with Windows so you don't have to remember.</p>
+      </li>
+      <li>
+        <h4>Launch Hamster AI</h4>
+        <pre><code>python app/main.py</code></pre>
+        <p>A hamster icon will appear in your system tray.</p>
+      </li>
+    </ol>
+
+    <h2>First Run</h2>
+    <p>After launching, Hamster AI greets you and is ready to chat. Here's how to get around:</p>
+    <table>
+      <thead><tr><th>Action</th><th>How</th></tr></thead>
+      <tbody>
+        <tr><td>Open chat</td><td>Double-click the tray icon, or press <code>Ctrl+Shift+H</code></td></tr>
+        <tr><td>Open the menu</td><td>Right-click the tray icon</td></tr>
+        <tr><td>Open settings</td><td>Right-click tray → Settings</td></tr>
+        <tr><td>Enable plugins</td><td>Right-click tray → Plugins</td></tr>
+        <tr><td>Quick commands</td><td>Type <code>/help</code> in chat for the full list</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Optional Dependencies</h2>
+    <p>Some plugins need extra packages. Install only what you need:</p>
+    <pre><code># Voice output (text-to-speech)
+pip install pyttsx3
+
+# Audio awareness (detects if audio is playing)
+pip install pycaw
+
+# Extended system stats (GPU, disk, network)
+pip install GPUtil pywin32 wmi
+
+# Hardware awareness (USB, battery, monitors)
+pip install pywin32 wmi</code></pre>
+
+    <h2>Start with Windows (Optional)</h2>
+    <p>To have Hamster AI launch automatically when you log in, open Settings → General and enable <strong>Start with Windows</strong>. There's a configurable delay so it waits for your desktop to settle first.</p>
+
+    <h2>Troubleshooting</h2>
+    <table>
+      <thead><tr><th>Problem</th><th>Fix</th></tr></thead>
+      <tbody>
+        <tr><td>"Ollama is not running"</td><td>Run <code>ollama serve</code> in a terminal and keep it open.</td></tr>
+        <tr><td>No models in model switcher</td><td>Pull a model: <code>ollama pull llama3.2:3b</code></td></tr>
+        <tr><td>Tray icon doesn't appear</td><td>Check <code>data/logs/hamster_ai.log</code> for errors. Run Diagnostics from the tray menu.</td></tr>
+        <tr><td>Global hotkey not working</td><td>Another app may have registered the same shortcut. Change it in Settings → General.</td></tr>
+        <tr><td>Plugin shows "failed to load"</td><td>Open Diagnostics for details — usually a missing optional dependency.</td></tr>
+        <tr><td>PowerShell execution policy error</td><td>Run <code>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code></td></tr>
+      </tbody>
+    </table>
+
+    <div class="btn-row">
+      <a href="../functionality/" class="btn btn-primary">Explore Features</a>
+      <a href="../diagnostics/" class="btn btn-secondary">Diagnostics</a>
+    </div>
+
+  </main>
+  <footer class="site-footer"></footer>
+</div>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>
